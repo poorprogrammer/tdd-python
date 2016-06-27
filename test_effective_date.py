@@ -1,5 +1,4 @@
-from datetime import *; from dateutil.relativedelta import *
-import calendar
+from datetime import *
 from effective_date import get_effective_date
 from unittest import TestCase
 
@@ -31,3 +30,7 @@ class TestEffectiveDate(TestCase):
     def test_today_is_saturday_with_1_duration_get_teusday(self):
         effective_date = get_effective_date(2016,6,25, 1)
         self.assertEqual(effective_date, date(2016,6,28))
+
+    def test_today_is_saturday_with_3_duration_get_teusday(self):
+        effective_date = get_effective_date(2016,6,25, 3)
+        self.assertEqual(effective_date, date(2016,6,30))
