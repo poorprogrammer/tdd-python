@@ -34,3 +34,7 @@ class TestEffectiveDate(TestCase):
     def test_today_is_saturday_with_3_duration_get_teusday(self):
         effective_date = get_effective_date(2016,6,25, 3)
         self.assertEqual(effective_date, date(2016,6,30))
+
+    def test_today_is_friday_with_1_duration_get_monday(self):
+        effective_date = get_effective_date(2016,6,30, 1)
+        self.assertEqual(effective_date, date(2016,7,4))
